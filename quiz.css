@@ -1,0 +1,78 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+.jumbotron {
+	position: fixed;
+	background: url('http://assets.worldwildlife.org/photos/2842/images/original/shutterstock_12730534.jpg?1352150501');
+	z-index: -1;
+	display: block;
+	width: 100%;
+	height: 100%;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.quiz {
+	position: fixed;
+	margin: 0 auto;
+	text-align: center;
+	top: 60%;
+	width: 100%;
+}
+
+.quiz input{
+	width: 100%;
+	height: 50px;
+	background: transparent;
+	border: 1px solid rgba(25, 99, 25, 0.6);
+	border-radius: 2px;
+	color: rgba(25, 99, 25, 1);
+	font-family: 'Century Gothic', Corbel, Arial;
+	font-size: 22px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.quiz input[type=button]{
+	background: rgba(225, 225, 225, 1);
+	border: 1px solid rgb(225, 225, 225);
+	cursor: pointer;
+	color: rgba(25, 99, 25, 1);
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.quiz input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.quiz input[type=button]:active{
+	opacity: 0.8;
+}
+
+.quiz input[type=button]:focus{
+	outline: none;
+}
+
+.quiz input[type=text]{
+	background: rgba(255, 255, 255, 0.4);
+}
+
+.quiz input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(25, 99, 25, 0.9);
+	background: rgba(255, 255, 255, 0.8);
+}
+
+::-webkit-input-placeholder{
+	color: rgba(0, 0, 0, 0.6);
+}
+
+::-moz-input-placeholder{
+	color: rgba(0, 0, 0, 0.6);
+}

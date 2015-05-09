@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			var bugs = [Protura, Collembola, Diplura, Thysanura, Ephemeroptera, Odonata];
+		</script>
+
+		<link rel="stylesheet" href="quiz.css">
+	</head>
+	<body>
+		<div class="jumbotron"></div>
+
+		<div class="quiz">
+			<div class="container">
+				<input type="text" placeholder="Order" name="order"><br>
+				<input type="text" placeholder="Family" name="family"><br>
+				<input id="submit" type="button" value="Check Answer" onClick="image()">
+			</div>
+		</div>
+		<script type="text/javascript">
+			var count = 3;
+				var random = Math.floor((Math.random()*count)) + 1;
+				document.write('<img src=https://raw.githubusercontent.com/georgesun/quizzer/master/images/' + random + '.jpg height="300" width="500">');
+
+			function image(){
+				var count = 3;
+				var random = Math.floor((Math.random()*count)) + 1;
+				document.write('<img src=https://raw.githubusercontent.com/georgesun/quizzer/master/images/' + random + '.jpg height="300" width="500">');
+			};
+		</script>
+	</body>
+</html>
