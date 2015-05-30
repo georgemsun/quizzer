@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Title for this page</title>
+		
+		<link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var array = ["http://www.hdwallpapersn.com/wp-content/uploads/2015/04/background_image_9.jpg", "http://fc07.deviantart.net/fs70/f/2013/174/3/e/recycled_texture_background_by_sandeep_m-d6aeau9.jpg", "http://www.psdgraphics.com/file/colorful-triangles-background.jpg"];
+				$('#background').css("background", "url('" + array[Math.floor(Math.random()*array.length)] + "')");
+				
+				$('.nav li').click(function() {
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="title">Title for this document</div>
+		<div id="menu">
+			<ul class="nav">
+				<li><a id="nav-head" href="#" class="about">About</a></li>
+				<li><a id="nav-head" href="#" class="fossils">Fossils 2016</a>
+				<li><a id="nav-head" href="#" class="invasive-species">Invasive Species 2016</a>
+				<li><a id="nav-head" href="#" class="entomology">Entomology 2015</a>
+			</ul>
+		</div>
+		
+		<div id="background">
+			
+		</div>
+		
+		<div id="response">
+			<input type="text" id="response-text" placeholder="Response"></input>
+			<button type="button" id="response-button">Submit</button>
+		</div>
+	</body>
+</html>
