@@ -1,0 +1,117 @@
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+#title {
+	width: 100%;
+	height: 100px;
+	background-color: #3D5771;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#menu {
+	width: 100%;
+	background-color: #00478F;
+	height: 62px;
+}
+.nav {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+.nav li {
+	list-style: none;
+	float: left;
+	padding: 20px;
+	background-color: #00478F;
+	border-right: 1px #CCCCCC solid;
+	text-transform: uppercase;
+}
+.nav li a:link, .nav li a:visited {
+	display: block;
+	text-decoration: none;
+	color: white;
+}
+.nav li:hover {
+	background-color: #3D5771;
+	cursor: pointer; cursor: hand;
+}
+
+#background {
+	background: url('http://www.lancefarrow.ca/wp-content/uploads/2014/06/triangle-background-17.png') no repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+#response {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+	background-color: #00478F;
+	padding: 20px;
+}
+#response-text {
+	width: 90%;
+}
+#response-button {
+	width: 10%;
+	float: right;
+	margin-right: 40px;
+}
+#response input, #response button, #response select {
+	outline: none;
+	border: 1px solid rgba(101,195,209,0.5);
+	border-radius: 3px;
+	background-color: rgba(255,255,255,0.6);
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	height: 30px;
+	padding: 10px;
+	vertical-align: bottom;
+	margin-bottom: 5px;
+}
+#response input {
+	cursor: text;
+}
+#response button, #response select {
+	cursor: pointer; cursor: hand;
+}
+#response input[type=text]:focus {
+	outline: none;
+	border: 1px solid rgba(101,195,209,1);
+	background-color: rgba(255,255,255,0.8);
+	/*font-weight: bold;*/
+}
+::-webkit-input-placeholder {
+	color: rgba(101,195,209,1);
+	font-weight: normal;
+}
+::-moz-input-placeholder {
+	color: rgba(101,195,209,1);
+	font-weight: normal;
+}
+#response button {
+	outline: none;
+	padding: 0px;
+	color: rgba(101,195,209,1);
+	width: 100px;
+}
+#response button[type=button]:hover {
+	background-color: rgba(101,195,209,0.8);
+	color: white;
+}
+#response button[type=button]:active {
+	background-color: rgba(101,195,209,0.3);
+	color: white;
+}
