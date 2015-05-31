@@ -1,53 +1,77 @@
 body {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
+	z-index: 0;
 }
 
 #title {
-	width: 100%;
-	/*height: 100px;*/
 	background-color: #3D5771;
 	font-weight: bold;
 	font-size: 30px;
-	/*line-height: 100px;*/
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	padding: 20px;
+}
+.title {
+	color: white;
+	font-weight: 900;
 }
 
 #menu {
 	width: 100%;
-	background-color: #00478F;
-	height: 62px;
+	background-color: rgb(0, 71, 143);
+	overflow:auto;
 }
 .nav {
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
+	font-size: 15px;
+	text-transform: uppercase;
 }
 .nav li {
 	list-style: none;
 	float: left;
 	padding: 20px;
-	height: 25px;
-	background-color: #00478F;
-	border-right: 1px #CCCCCC solid;
-	text-transform: uppercase;
+	border-right: 1px #A6A6A6 solid;
 }
 .nav li a:link, .nav li a:visited {
 	display: block;
 	text-decoration: none;
 	color: white;
-	font-size: 15px;
 }
 .nav li:hover {
-	background-color: #3D5771;
+	background-color: rgb(39, 87, 156);
 	cursor: pointer; cursor: hand;
+}
+.selected {
+	background-color: rgb(39, 87, 156);
+}
+
+#about {
+	padding: 10px 40px 30px 40px;
+	width: 500px;
+	background-color: white;
+	position: fixed;
+	z-index: 2;
+	right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+	top: 50%;
+	margin-top: -175px;
+}
+#about p {
+	font-size: 12px;
+}
+#fade {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.3);
+	position: fixed;
+	z-index: 1;
 }
 
 #background {
-	/*background: url(images/3.jpg);*/
+	background: url(images/3.jpg);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -76,7 +100,7 @@ body {
 #response input, #response button, #response select {
 	outline: none;
 	border: none;
-	border-radius: 3px;
+	border-radius: 0px;
 	background-color: rgba(255,255,255,0.5);
 	font-size: 15px;
 	height: 30px;
@@ -92,9 +116,7 @@ body {
 }
 #response input[type=text]:focus {
 	outline: none;
-	border: 1px solid rgba(255,255,255,1);
 	background-color: rgba(255,255,255,0.8);
-	/*font-weight: bold;*/
 }
 ::-webkit-input-placeholder {
 	color: #3D5771;
@@ -107,15 +129,13 @@ body {
 #response button {
 	outline: none;
 	padding: 0px;
-	color: #3D5771;
+	color: rgba(61,87,113,1);
 }
-#response button[type=button]:hover {
-	background-color: #3D5771;
-	opacity: 0.8;
-	color: white;
+#response button[type=button]:hover, #response button[type=button]:focus {
+	background-color: rgba(255,255,255,0.8);
+	color: rgba(61,87,113,1);
 }
 #response button[type=button]:active {
-	background-color: #3D5771;
-	opacity: 0.4;
-	color: white;
+	background-color: rgba(255,255,255,0.7);
+	color: rgba(61,87,113,1);
 }

@@ -10,10 +10,19 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				var array = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg",];
-				$('#background').css("background", "url(images/" + array[Math.floor(Math.random()*array.length)] + ") no-repeat center center fixed");
+				// $('#background').css("background", "url(images/" + array[Math.floor(Math.random()*array.length)] + ") no-repeat center center fixed");
 
-				$('.nav li').click(function() {
-					
+				$('.nav li:not(.title)').click(function() {
+					$('.nav li').removeClass("selected");
+					$(this).addClass("selected");
+				});
+
+				$('.nav .about').click(function() {
+					$('#about, #fade').fadeIn('fast');
+				});
+
+				$('#title, .nav li:not(.about), #fade').click(function() {
+					$('#about, #fade').fadeOut('fast');
 				});
 
 				$('#response-text').keyup(function() {
@@ -23,21 +32,30 @@
 		</script>
 	</head>
 	<body>
-		<div id="title">Scioly - Taxonomy Quizzer</div>
+		<!-- <div id="title">Scioly - Taxonomy Quizzer</div> -->
+
 		<div id="menu">
 			<ul class="nav">
-				<li><a id="nav-head" href="#" class="about">About</a></li>
-				<li><a id="nav-head" href="#" class="fossils">Fossils 2016</a>
-				<li><a id="nav-head" href="#" class="invasive-species">Invasive Species 2016</a>
-				<li><a id="nav-head" href="#" class="entomology">Entomology 2015</a>
+				<li class="title"><a>Science Olympiad - Taxonomy Quizzer</a></li>
+				<li class="about"><a href="#">About</a></li>
+				<li class="fossils"><a href="#">Fossils 2016</a>
+				<li class="invasive-species"><a href="#">Invasive Species 2016</a>
+				<li class="entomology"><a href="#">Entomology 2015</a>
 			</ul>
 		</div>
-		
+
+		<div id="about">
+			<h3>About</h3>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		</div>
+
+		<div id="fade"></div>
+
 		<div id="background"></div>
 		
 		<div id="response">
 			<input type="text" id="response-text" placeholder="Response"></input>
-			<button type="button" id="response-button">Give up</button>
+			<button type="button" id="response-button">Show answer</button>
 		</div>
 	</body>
 </html>
