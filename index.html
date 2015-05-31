@@ -1,9 +1,9 @@
 <html>
 	<head>
-		<title>Quizzing</title>
+		<title>Quizzer | Science Olympiad</title>
 		
 		<link rel="stylesheet" href="main.css">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.min.js"></script>
 		<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
 		
@@ -18,12 +18,12 @@
 				$('.nav .about').click(function() {
 					$('#about, #fade').fadeIn('fast');
 				});
-				$('#title, .nav li:not(.about), #fade').click(function() {
+				$('.nav li:not(.about), #fade').click(function() {
 					$('#about, #fade').fadeOut('fast');
 					$('.about').removeClass("selected");
 				});
 				var selected = 0;
-				$('#fade').click(function() {
+				$('.title, #fade').click(function() {
 					if(selected == 1) $('.fossils').addClass("selected");
 					if(selected == 2) $('.invasive-species').addClass("selected");
 					if(selected == 3) $('.entomology').addClass("selected");
@@ -33,19 +33,19 @@
 				var array_images;
 				var array_answers;
 				$('.fossils').click(function() {
-					array_images = ["fossils-1.jpg", "fossils-2.jpg", "fossils-3.jpg"];
-					array_answers = ["circuit", "gears", "lab"];
-					next_question();
+					array_images = ['fossils-1.jpg', 'fossils-2.jpg', 'fossils-3.jpg'];
+					array_answers = ['circuit', 'gears', 'lab'];
+					if(selected != 1) next_question();
 					selected = 1;
 				});
 				$('.invasive-species').click(function() {
-					array_images = ["invasive-species-1.jpg", "invasive-species-2.jpg"];
-					array_answers = ["blueprints", "model"];
-					next_question();
+					array_images = ['invasive-species-1.jpg', 'invasive-species-2.jpg'];
+					array_answers = ['blueprints', 'model'];
+					if(selected != 2) next_question();
 					selected = 2;
 				});
 				$('.entomology').click(function() {
-					next_question();
+					// if(selected != 3) next_question();
 					selected = 3;
 				});
 				
@@ -53,6 +53,7 @@
 				var next_question = function() {
 					number = Math.floor(Math.random()*array_images.length);
 					$('#background').css("background", "url(images/" + array_images[number] + ") no-repeat center center fixed");
+					$('#background').css("background-size", "cover");
 				}
 
 				// CHECKING ANSWERS
@@ -67,7 +68,7 @@
 				});
 				$('#response-text').keypress(function(e) {
 					if(e.which == 13) {
-						if($('#response input').val() == array_answers[number]) {
+						if($('#response input').val().toLowerCase() == array_answers[number].toLowerCase()) {
 							$('#response-text').val('');
 							$('#response-text').css("background-color", "rgb(156, 216, 147)");
 							next_question();
@@ -81,7 +82,7 @@
 				$('#response-button').click(function() {
 					if(response_button == 0) {
 						$('#response-text').val(array_answers[number]);
-						$('#response-button').html("Clear answer");
+						$('#response-button').html("Next question");
 						response_button = 1;
 					}
 					else {
@@ -95,21 +96,19 @@
 		</script>
 	</head>
 	<body>
-		<!-- <div id="title">Scioly - Taxonomy Quizzer</div> -->
-
 		<div id="menu">
 			<ul class="nav">
 				<li class="title"><a>Science Olympiad - Taxonomy Quizzer</a></li>
 				<li class="about"><a href="#">About</a></li>
 				<li class="fossils"><a href="#">Fossils 2016</a>
 				<li class="invasive-species"><a href="#">Invasive Species 2016</a>
-				<li class="entomology"><a href="#">Entomology 2015</a>
+				<!-- <li class="entomology"><a href="#">Entomology 2015</a> -->
 			</ul>
 		</div>
 
 		<div id="about">
 			<h3>About</h3>
-			<p>This is a quizzer for Science Olympiad taxonomy events. If you have questions, issues, or suggestions, please send bernard a <a href="http://scioly.org/phpBB3/memberlist.php?mode=viewprofile&un=bernard" target="_blank">private message</a>.</p>
+			<p>This is a quizzer for Science Olympiad taxonomy events. If you have questions, issues, or suggestions, please send bernard a <a href="http://scioly.org/phpBB3/ucp.php?i=pm&mode=compose&u=22093" target="_blank">private message</a>.</p>
 
 			<p class="subheading">Instructions</p>
 			<p> Start by selecting an event at the top of the page. Type your answers in the text input at the bottom of the page, and press the enter/return key to check your answer. To see answers, select the button to the right of the text input (or press 'tab' from the text input and press 'space').</p>

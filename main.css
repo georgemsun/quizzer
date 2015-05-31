@@ -1,7 +1,7 @@
 body {
 	margin: 0;
-	font-family: 'Open Sans', sans-serif;
 	z-index: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 p {
 	font-size: 12px;
@@ -20,12 +20,6 @@ p a:hover, p a:visited {
 }
 
 /* NAVIGATION */
-#title {
-	background-color: #3D5771;
-	font-weight: bold;
-	font-size: 30px;
-	padding: 20px;
-}
 .title {
 	color: white;
 	font-weight: 900;
@@ -52,6 +46,9 @@ p a:hover, p a:visited {
 	display: block;
 	text-decoration: none;
 	color: white;
+}
+.nav li a:focus {
+	outline: none;
 }
 .nav li:hover {
 	background-color: rgba(0, 0, 0, 0.15);
@@ -84,8 +81,9 @@ p a:hover, p a:visited {
 }
 
 #background {
-	background-color: rgb(150, 150, 150);
-	/*background: url(images/3.jpg);*/
+	/*background-color: rgb(150, 150, 150);*/
+	background: url(images/background.jpg);
+	opacity: 1;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
