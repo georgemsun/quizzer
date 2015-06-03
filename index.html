@@ -7,6 +7,20 @@
 		<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
 		
+		<!--FAVICON-->
+		<link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="icons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="icons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120x120.png">
+		<link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="icons/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="icons/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+
 		<script type="text/javascript">
 			var review = false;
 			$(document).ready(function() {
@@ -28,6 +42,15 @@
 					if(selected == 1) $('.fossils').addClass("selected");
 					if(selected == 2) $('.invasive-species').addClass("selected");
 					if(selected == 3) $('.entomology').addClass("selected");
+				});
+				$(document).keyup(function(e) {
+					if (e.keyCode == 27) {
+						$('#about, #fade').fadeOut('fast');
+						$('.about').removeClass("selected");
+						if(selected == 1) $('.fossils').addClass("selected");
+						if(selected == 2) $('.invasive-species').addClass("selected");
+						if(selected == 3) $('.entomology').addClass("selected");
+					}
 				});
 
 				// SET ARRAYS
@@ -69,6 +92,11 @@
 				});
 				$('#response-text').blur(function() {
 					$(this).css("background-color", "rgba(255,255,255,0.5)");
+				});
+				$('#response-text').keyup(function(e) {
+					if (e.keyCode == 27) {
+						$(this).val('');
+					}
 				});
 				$('#response-text').keypress(function(e) {
 					if(e.which == 13) {
@@ -117,7 +145,7 @@
 			<p>This is a quizzer for Science Olympiad taxonomy events, updated for the <a href="http://soinc.org/sites/default/files/uploaded_files/Fossil_List_15FINAL_v8-2-2014.pdf" target="_blank">2015 Fossil List</a>. If you have questions, issues, or suggestions, please send bernard a <a href="http://scioly.org/phpBB3/ucp.php?i=pm&mode=compose&u=22093" target="_blank">private message</a>.</p>
 
 			<p class="subheading">Instructions</p>
-			<p> Start by selecting an event at the top of the page. Type your answers in the text input at the bottom of the page, and press the enter/return key to check your answer. To see answers, select the button to the right of the text input (or press 'tab' from the text input and press 'space').</p>
+			<p> Start by selecting an event at the top of the page. Type your answers in the text input at the bottom of the page, and press the <em>enter/return</em> key to check your answer. Press the <em>escape</em> key to clear your answer. To see answers, select the button to the right of the text input (or press <em>tab</em> from the text input and press <em>space</em>).</p>
 
 			<p class="subheading">Acknowledgements</p>
 			<p>A huge thank you to <a href="http://scioly.org/phpBB3/memberlist.php?mode=viewprofile&un=SOnerd" target="_blank">SOnerd</a> for their help with images.</p>
