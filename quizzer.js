@@ -1,5 +1,11 @@
 var review = false;
 $(document).ready(function() {
+	// OPEN DOCUMENT
+	$('#menu, .nav, #response-text, #response-button, #about, #fade').hide();
+	$('#menu, .nav, #response-text, #response-button').fadeIn('slow');
+
+	$('#about, #fade').delay('slow').fadeIn('slow');
+
 	// NAVIGATION
 	$('.about').addClass("selected");
 	$('.nav li:not(.title)').click(function() {
@@ -80,11 +86,11 @@ $(document).ready(function() {
 				$('#response-text').val('');
 				$('#response-button').html("Show answer");
 				response_button = 0;
-				$('#response-text').css("background-color", "rgb(156, 216, 147)");
+				$('#response-text').css("background-color", "rgba(156, 216, 147, 0.6)");
 				next_question();
 			}
 			else {
-				$('#response-text').css("background-color", "rgb(255, 160, 160)");
+				$('#response-text').css("background-color", "rgba(255, 160, 160, 0.6)");
 			}
 		}
 	});

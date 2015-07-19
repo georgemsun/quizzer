@@ -1,8 +1,37 @@
+/* BLUE THEME */
+body { background-color: rgb(0,71,143); }
+#menu { background-color: rgb(0,71,143); }
+.nav li:hover { background-color: rgba(0,0,0,0.15); }
+.nav li a:link, .nav li a:visited { color: white; }
+.selected { background-color: rgba(0,0,0,0.15); }
+#response { background-color: rgb(0,71,143); }
+#response input, #response button, #response select { background-color: rgba(255,255,255,0.5); }
+#response input[type=text]:focus { background-color: rgba(255,255,255,0.8); }
+::-webkit-input-placeholder { color: rgba(61,87,113,1); }
+::-moz-input-placeholder { color: rgba(61,87,113,1); }
+#response button { color: rgba(61,87,113,1); }
+#response button[type=button]:hover, #response button[type=button]:focus { background-color: rgba(255,255,255,0.8); color: black; }
+#response button[type=button]:active { background-color: rgba(255,255,255,0.7); color: rgba(61,87,113,1); }
+
+/* BLACK THEME */
+/*body { background-color: rgba(0,0,0,0.6); }
+#menu { background-color: rgba(0,0,0,0.6); }
+.nav li:hover { background-color: rgba(0,0,0,0.3); }
+.nav li a:link, .nav li a:visited { color: white; }
+.selected { background-color: rgba(0,0,0,0.3); }
+#response { background-color: rgba(0,0,0,0.5); }
+#response input, #response button, #response select { background-color: rgba(255,255,255,0.5); }
+#response input[type=text]:focus { background-color: rgba(255,255,255,0.8); }
+::-webkit-input-placeholder { color: rgba(0,0,0,0.7); }
+::-moz-input-placeholder { color: rgba(0,0,0,0.7); }
+#response button { color: rgba(0,0,0,0.7); }
+#response button[type=button]:hover, #response button[type=button]:focus { background-color: rgba(255,255,255,0.8); color: black; }
+#response button[type=button]:active { background-color: rgba(255,255,255,0.7); color: rgba(61,87,113,1); }*/
+
 body {
 	margin: 0;
 	z-index: 0;
 	font-family: 'Open Sans', sans-serif;
-	background-color: rgb(0, 71, 143);
 }
 p {
 	font-size: 12px;
@@ -27,9 +56,10 @@ p a:hover, p a:visited {
 }
 #menu {
 	width: 100%;
-	background-color: rgb(0, 71, 143);
-	overflow:auto;
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+	/*overflow: auto;*/
+	position: absolute;
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+	z-index: 3;
 }
 .nav {
 	margin: 0px;
@@ -47,17 +77,13 @@ p a:hover, p a:visited {
 .nav li a:link, .nav li a:visited {
 	display: block;
 	text-decoration: none;
-	color: white;
 }
 .nav li a:focus {
 	outline: none;
 }
 .nav li:hover {
-	background-color: rgba(0, 0, 0, 0.15);
 	cursor: pointer; cursor: hand;
-}
-.selected {
-	background-color: rgba(0, 0, 0, 0.15);
+	transition: background-color 0.5s;
 }
 
 /* ABOUT POPUP */
@@ -68,9 +94,9 @@ p a:hover, p a:visited {
 	position: fixed;
 	z-index: 2;
 	right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
 	top: 50%;
 	margin-top: -190px; /*-175px*/
 }
@@ -83,8 +109,8 @@ p a:hover, p a:visited {
 }
 
 #background {
-	/*background-color: rgb(150, 150, 150);*/
 	background: url(images/background.jpg);
+	transition: background 0.5s;
 	opacity: 1;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -98,10 +124,9 @@ p a:hover, p a:visited {
 
 /* INPUT */
 #response {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-	background-color: #00478F;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
 	padding: 20px;
 }
 #response-text {
@@ -116,12 +141,12 @@ p a:hover, p a:visited {
 	outline: none;
 	border: none;
 	border-radius: 0px;
-	background-color: rgba(255,255,255,0.5);
 	font-size: 15px;
 	height: 30px;
 	padding: 10px;
 	vertical-align: bottom;
 	margin-bottom: 5px;
+	transition: background-color 0.5s;
 }
 #response input {
 	cursor: text;
@@ -131,26 +156,15 @@ p a:hover, p a:visited {
 }
 #response input[type=text]:focus {
 	outline: none;
-	background-color: rgba(255,255,255,0.8);
+	
 }
 ::-webkit-input-placeholder {
-	color: #3D5771;
 	font-weight: normal;
 }
 ::-moz-input-placeholder {
-	color: #3D5771;
 	font-weight: normal;
 }
 #response button {
 	outline: none;
 	padding: 0px;
-	color: rgba(61,87,113,1);
-}
-#response button[type=button]:hover, #response button[type=button]:focus {
-	background-color: rgba(255,255,255,0.8);
-	color: black;
-}
-#response button[type=button]:active {
-	background-color: rgba(255,255,255,0.7);
-	color: rgba(61,87,113,1);
 }
