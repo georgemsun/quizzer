@@ -146,7 +146,7 @@ p a:hover, p a:visited {
 	padding: 10px;
 	vertical-align: bottom;
 	margin-bottom: 5px;
-	transition: background-color 0.5s;
+	transition: background-color 0.3s;
 }
 #response input {
 	cursor: text;
